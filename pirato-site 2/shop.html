@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — PIRATO</title>
+<meta name="description" content="Shop PIRATO. Built different.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/shop.css">
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="shop-body">
+
+<nav>
+  <a href="index.html" class="nav-mark"><img src="images/logo-mark.jpg" alt="Pirato" class="nav-logo">Pirato</a>
+  <div class="nav-links">
+    <a href="index.html#manifesto">Standard</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="index.html#signature">Mark</a>
+  </div>
+  <button class="bag-toggle" id="bagToggle" aria-label="Open bag">
+    Bag <span class="bag-count" id="bagCount">0</span>
+  </button>
+</nav>
+
+<header class="shop-header">
+  <span class="eyebrow">The Collection</span>
+  <h1>Shop The Drop</h1>
+  <p>No easy weather. Every piece is built for the streets first.</p>
+</header>
+
+<main class="product-grid" id="productGrid">
+  <!-- product cards injected by js/shop.js -->
+</main>
+
+<footer>
+  <span>© Pirato — Built Different</span>
+  <span>No Days Off</span>
+</footer>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-body" id="modalBody">
+      <!-- injected by js/shop.js -->
+    </div>
+  </div>
+</div>
+
+<!-- CART / BAG DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="bag-drawer" id="bagDrawer" aria-hidden="true">
+  <div class="bag-head">
+    <h2>Your Bag</h2>
+    <button class="bag-close" id="bagClose" aria-label="Close bag">&times;</button>
+  </div>
+  <div class="bag-items" id="bagItems">
+    <!-- injected by js/shop.js -->
+  </div>
+  <div class="bag-footer" id="bagFooter">
+    <div class="bag-subtotal">
+      <span>Subtotal</span>
+      <span id="bagSubtotal">$0</span>
+    </div>
+    <p class="bag-note">
+      Checkout runs through Stripe Payment Links. If your bag has more than
+      one product, you'll pay for each with its own secure button below —
+      Stripe keeps every checkout locked to one item at a time when there's
+      no backend involved.
+    </p>
+    <div class="bag-checkout-list" id="bagCheckoutList"></div>
+  </div>
+</aside>
+
+<script src="data/products.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
